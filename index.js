@@ -68,6 +68,19 @@ app.get('/', (req,res) => {
 });
 
 
+// # Rota pro cadastro
+app.get('/cadastro', (req, res) =>{
+	res.render('cadastro')
+});
+
+// # Rota formulario
+app.post('/add', (req, res) => {
+	pokemon = req.body;
+	pokemon.id = pokedex.length + 1;
+	pokedex.push(pokemon);
+	res.redirect('/');
+});
+
 // # Porta do servidor
 const porta = 3000;
 app.listen(porta, () => {
