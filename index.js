@@ -66,3 +66,10 @@ let pokemon = undefined;
 app.get('/', (req,res) => {
   res.render('index', {pokemon, pokedex});
 });
+
+
+// # Porta do servidor
+const porta = 3000;
+app.listen(porta, () => {
+  console.log(`Servidor rodando em http://localhost:${porta}`);
+})
