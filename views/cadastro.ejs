@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <header>
+        <h1> <a href="/">Pokédex</a> </h1>
+    </header>
+
+    <main>
+
+        <section id="cadastro">
+
+            <h2>Cadastre um novo Pokémon</h2>
+           
+            <img src="../img/form-pokemon.png" alt="pokemon-card" id="pokedex">
+
+            <form action="/add" method="POST">
+                <label for='name' id="descricaoNome">Nome:</label>
+                <input type="text" id="nome" name='name'>
+        
+                <label for='peso'>Peso:</label>
+                <input type="text" id="peso" name='peso'>
+        
+                <label for='altura'>Altura:</label>
+                <input type="text" id="altura" name='altura'>
+        
+                <label for="description">Descrição:</label>
+                <input type='text' id="descricao" name='description'>
+
+                <label for='category' id="descricaoCategoria">Categoria:</label>
+                <input type="text" id="categoria" name='category'>
+        
+                <label for='type'>Tipo:</label>
+                <input type="text" id="tipo" name='type'>
+        
+                <label for="abilities">Habilidade:</label>
+                <input type="text" id="habilidade" name='abilities'>
+        
+                <label for='image'>Link da Imagem:</label>
+                <input type="text" id="imagem" name='image'>
+
+                <button type="submit" id="btnCadastrar">Cadastrar</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
