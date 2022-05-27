@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(225, 100, 100);
+}
+header h1{
+  text-align: center;
+  font-family: pokemon;
+}
+header h1 a {
+  text-decoration: none;
+  color: #BE1023;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+section h2 {
+  color: #312729;
+}
+section#cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+}
+#cadastro form {
+  display: flex;
+  flex-direction: column;
+  margin-top: -61rem;
+}
+
+#cadastro form input {
+  margin: 0.5rem;
+  padding: 0.6rem;
+}
+
+#cadastro form button {
+  margin-top: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  background-color: #312729;
+  border: 1px solid #312729;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+}
+#cadastro form button:hover {
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  background-color:#746D6F;
+  border-color: none;
+  cursor: pointer;
+}
+
+/* Imagem pokedex */
+#pokedex{
+  width: 40rem;
+}
