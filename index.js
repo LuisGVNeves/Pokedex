@@ -19,6 +19,7 @@ app.use(express.urlencoded());
 // # Array pokedex que vai armazenar input
 const pokedex = [
 	{
+		id: 1,
 		altura: '0.7 m',
 		peso: '6.9 kg',
 		category: 'Semente',
@@ -29,6 +30,7 @@ const pokedex = [
 		image:'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
 	},
 	{
+		id: 2,
 		altura: '1.1 m',
 		peso: '19.0 kg',
 		category: 'chamas',
@@ -39,6 +41,7 @@ const pokedex = [
 		image:'https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png',
 	},
 	{
+		id: 3,
 		altura: '0.7 m',
 		peso: '7.5 kg',
 		category: 'água',
@@ -49,6 +52,7 @@ const pokedex = [
 		image:'https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png',
 	},
 	{
+		id: 4,
 		altura: '3 m',
 		peso: '65 kg',
 		category: 'veneno',
@@ -64,17 +68,30 @@ let pokemon = undefined;
 
 // # Rota principal
 app.get('/', (req,res) => {
-  res.render('index', {pokemon, pokedex});
+	/*
+		Objetivo: Lá na view index.ejs,  vou pegar essas variáveis pokemon e pokedex,
+		percorrer a pokedex, e acessar as propriedades dela que são varios objetos.
+	*/
+  res.render('index', {pokedex});
 });
 
 
 // # Rota pro cadastro
 app.get('/cadastro', (req, res) =>{
-	res.render('cadastro')
+	/*
+		Objetivo: Assim que usuario clicar no cadastro, essa rota vai renderizar a 
+		view cadastro
+	*/
+	res.render('cadastro');
 });
+
 
 // # Rota formulario
 app.post('/add', (req, res) => {
+
+	/*
+		Objetivo: Assim que o usuário clicou no submit do formulario,
+	*/
 	pokemon = req.body;
 	pokemon.id = pokedex.length + 1;
 	pokedex.push(pokemon);
@@ -85,8 +102,10 @@ app.post('/add', (req, res) => {
 app.get('/detalhes/:id', (req,res) => {
 	// # Indice do pokemon
 	const id = req.params.id;
-	res.render('detalhes', {id,pokemon, pokedex})
+	pokemon = pokedex[id - 1];
+	res.render('detalhes', {pokemon,pokedex})
 })
+
 
 
 // # Porta do servidor

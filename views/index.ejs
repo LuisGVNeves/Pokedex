@@ -12,6 +12,9 @@
   <body>
       <header>
         <img src="/img/header-site.png" alt="pokemon" id="header-pokemon"> 
+
+        <!--Assim que usuario clicar em cadastro, vai ser redirecionado pra rota cadastro
+        que vai renderizar a view cadastro-->
         <ul>
           <li> <a href="/cadastro">Cadastro</a></li>
         </ul>
@@ -21,25 +24,26 @@
       <main>
 
         <section>
-
           <h2>Pokémons</h2>
 
+          <!--Container do pokemon-->
           <article id="container-card">
-  
-            <% pokedex.forEach((pokemon, indice)=> { %> 
-              
+            <!--Cartas do pokemon-->
+            <% pokedex.forEach((pokemon)=> { %> 
               <div id="carta">
                 <img src= "<%= pokemon.image %>" alt="pokémon" id="foto-pokemon">
                 
                 <h3><%= pokemon.name %></h3>
-                
-                <a href="/detalhes/<%= indice%>" >Detalhes</a>
+
+                <!--
+                  Quando usuário quiser ver as informações do pokemon, ele vai ser direcionado
+                  para a rota detalhes, e passando o #ID do pokemon atual.
+                -->
+                <a href="/detalhes/<%= pokemon.id%>">Informações do pokemon</a>
+
               </div>
-
             <% }) %>
-  
           </article>
-
 
         </section>
 
