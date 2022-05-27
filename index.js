@@ -81,6 +81,14 @@ app.post('/add', (req, res) => {
 	res.redirect('/');
 });
 
+// # Rota ver detalhes do pokemon
+app.get('/detalhes/:id', (req,res) => {
+	// # Indice do pokemon
+	const id = req.params.id;
+	res.render('detalhes', {id,pokemon, pokedex})
+})
+
+
 // # Porta do servidor
 const porta = 3000;
 app.listen(porta, () => {
