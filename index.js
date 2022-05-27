@@ -59,3 +59,10 @@ const pokedex = [
 		image:'https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png',
 	},
 ];
+
+let pokemon = undefined; 
+
+// # Rota principal
+app.get('/', (req,res) => {
+  res.render('index', {pokemon, pokedex});
+});
