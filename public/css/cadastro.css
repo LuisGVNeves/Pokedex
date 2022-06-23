@@ -35,7 +35,7 @@ section#cadastro {
 }
 
 #cadastro form button {
-  margin-top: 1rem;
+  margin-top: 1.9rem;
   padding-bottom: 0.7rem;
   border-bottom-left-radius: 40%;
   border-bottom-right-radius: 40%;
@@ -43,10 +43,10 @@ section#cadastro {
   border: 1px solid #312729;
   font-size: 1.1rem;
   font-weight: bold;
-
+  color: rgb(255, 255, 255);
 }
 #cadastro form button:hover {
-  color: rgb(255, 255, 255);
+  color: #000;
   font-size: 1.1rem;
   background-color:#746D6F;
   border-color: none;
